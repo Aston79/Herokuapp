@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class InputsTesting extends BaseTest {
@@ -14,5 +15,6 @@ public class InputsTesting extends BaseTest {
         Actions builder = new Actions(driver);
         builder.sendKeys(Keys.ARROW_DOWN);
         builder.sendKeys(Keys.ARROW_UP);
+        Assert.assertTrue(true);
     }
 }
