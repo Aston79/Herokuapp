@@ -5,10 +5,26 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
+import static org.testng.Assert.assertEquals;
+
 public class CheckBoxTesting extends BaseTest {
 
     @Test
-    public void CheckBoxTest() {
+    public void checkBoxesTesting() {
+        driver.get("http://the-internet.herokuapp.com/checkboxes");
+        By checkboxes = By.tagName("input");
+        List<WebElement> checkBoxes = driver.findElements(By.tagName("input"));
+        assertEquals(checkBoxes.get(0).isSelected(), false, "the 1st checkbox is unchecked");
+        checkBoxes.get(0).click();
+        assertEquals(checkBoxes.get(0).isSelected(), true, "the 1st checkbox is checked");
+        assertEquals(checkBoxes.get(1).isSelected(), true, "the 2nd checkbox is checked");
+        checkBoxes.get(1).click();
+        assertEquals(checkBoxes.get(1).isSelected(), false, "the 2nd checkbox is unchecked");
+    }
+    @Test
+    public void CheckBoxTesting2() {
         driver.get("https://the-internet.herokuapp.com/checkboxes");
         WebElement checkBox1 = driver.findElement(By.cssSelector("[type=checkbox]"));
         checkBox1.click();
