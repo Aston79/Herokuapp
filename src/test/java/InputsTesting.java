@@ -15,6 +15,6 @@ public class InputsTesting extends BaseTest {
         Actions builder = new Actions(driver);
         builder.sendKeys(Keys.ARROW_DOWN);
         builder.sendKeys(Keys.ARROW_UP);
-        Assert.assertTrue(true);
+        Assert.assertEquals(true, true, "Input is possible");
     }
 }

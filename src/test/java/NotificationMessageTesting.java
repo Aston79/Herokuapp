@@ -10,6 +10,6 @@ public class NotificationMessageTesting extends BaseTest {
         driver.get("https://the-internet.herokuapp.com/notification_message_rendered");
         driver.findElement(By.cssSelector(".example a")).click();
         String message = driver.findElement(By.cssSelector(".flash")).getText();
-        assertEquals(message, "Action unsuccesful, please try again\n" + "×");
+        assertEquals(message, "Action is unsuccessful, please try again\n" + "×");
     }
 }
